@@ -14,7 +14,9 @@ const setLocal = (data) => {
 };
 let itemDataa = [];
 const Form = () => {
-	const { getLocal, formValue, editId, itemText } = useLocalContext();
+	const [error, setError] = useState(null);
+	const { getLocal, formValue, editId, itemText, changeError, isError } =
+		useLocalContext();
 	itemData = localStorage.getItem("data")
 		? JSON.parse(localStorage.getItem("data"))
 		: [];
@@ -43,7 +45,12 @@ const Form = () => {
 			`${year}`;
 		e.preventDefault();
 		if (!formValue) {
-			itemData.unshift({ id, item: text, selected: false, time });
+			if (text.length !== 0) {
+				itemData.unshift({ id, item: text, selected: false, time });
+				changeError(null);
+			} else {
+				changeError("iltimos ma'lumot kiriting  ! ");
+			}
 			setLocal(itemData);
 			getLocal(JSON.parse(localStorage.getItem("data")));
 			setText("");
@@ -77,6 +84,7 @@ const Form = () => {
 					value={text}
 				/>
 			</div>
+			<p className="error">{isError && isError}</p>
 		</FormStyled>
 	);
 };

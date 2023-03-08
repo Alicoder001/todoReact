@@ -14,6 +14,8 @@ const localReducer = (state, action) => {
 			return { ...state, filter: action.payload };
 		case "changeMode":
 			return { ...state, isDark: action.payload };
+		case "error":
+			return { ...state, isError: action.payload };
 	}
 };
 const LocalContextProveder = ({ children }) => {
@@ -27,6 +29,7 @@ const LocalContextProveder = ({ children }) => {
 		isDark: localStorage.getItem("isDark")
 			? JSON.parse(localStorage.getItem("isDark"))
 			: true,
+		isError: null,
 	});
 
 	const getLocal = (data) => {
@@ -54,6 +57,9 @@ const LocalContextProveder = ({ children }) => {
 	const filterF = (itemType) => {
 		dispatch({ type: "itemType", payload: itemType });
 	};
+	const changeError = (error) => {
+		dispatch({ type: "error", payload: error });
+	};
 	const changeMode = (mode) => {
 		localStorage.setItem("isDark", JSON.stringify(mode));
 		dispatch({
@@ -73,6 +79,7 @@ const LocalContextProveder = ({ children }) => {
 				itemText,
 				filterF,
 				changeMode,
+				changeError,
 			}}>
 			{children}
 		</LocalContext.Provider>

@@ -4,7 +4,7 @@ export const FormStyled = styled.form`
 	.form_block {
 		box-shadow: 0px 35px 50px -15px rgba(194, 195, 214, 0.5);
 		margin-top: -142px;
-		margin-bottom: 2.4rem;
+		margin-bottom: 1.2rem;
 		border-radius: 5px;
 		height: 64px;
 		display: flex;
@@ -12,6 +12,10 @@ export const FormStyled = styled.form`
 		background-color: ${(props) =>
 			props.theme.isDark ? "#25273D" : "white"};
 		padding: 2.3rem 7.2rem;
+	}
+	.error {
+		color: red;
+		margin-bottom: 1.2rem;
 	}
 	.form_input {
 		font-family: "Josefin Sans";
