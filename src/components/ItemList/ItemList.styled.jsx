@@ -21,7 +21,8 @@ export const ItemListStyled = styled.ul`
 		display: flex;
 		flex-direction: column;
 		row-gap: 1px;
-		background-color: #e3e4f1;
+		background-color: ${(props) =>
+			props.theme.isDark ? "#393A4B" : "#e3e4f1"};
 		box-shadow: ${(props) =>
 			props.theme.isDark
 				? "0px 35px 50px -15px rgba(0, 0, 0, 0.5)"
