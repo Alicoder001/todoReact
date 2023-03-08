@@ -3,12 +3,13 @@ import { ItemStyled } from "./Item.styled";
 import checkOff from "../../images/checkoff.svg";
 import checkOn from "../../images/checkOn.svg";
 import useLocalContext from "../../hooks/useLocalContext";
-const Item = ({ item }) => {
-	const { selected, getLocal, deleteF, itemText } = useLocalContext();
 
-	console.log(item);
+const Item = ({ item }) => {
+	const { selected, getLocal, deleteF, itemText, isDark } = useLocalContext();
+
 	return (
 		<ItemStyled>
+			{<p className="time">{item.time}</p>}
 			<div
 				onClick={() => {
 					selected(item.id);

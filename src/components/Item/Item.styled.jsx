@@ -2,12 +2,24 @@ import styled from "styled-components";
 
 export const ItemStyled = styled.li`
 	height: 64px;
-	background-color: white;
+	background-color: ${(props) => (props.theme.isDark ? "#1A1A40" : "white")};
 	width: 100%;
 	display: flex;
 	align-items: center;
 	padding: 2.4rem 2rem;
+	position: relative;
 
+	.time {
+		font-size: 1.3rem;
+
+		position: absolute;
+		right: 8rem;
+		bottom: 0.1rem;
+		color: ${(props) => (!props.theme.isDark ? " #0d0d56" : "#7b7bf1")};
+	}
+	.year {
+		margin-left: 30px;
+	}
 	.checkIcon {
 		margin-right: 2.4rem;
 		&:hover {
@@ -35,7 +47,7 @@ export const ItemStyled = styled.li`
 		font-size: 1.8rem;
 		line-height: 1;
 		width: 100%;
-        transition: 0.4s;
+		transition: 0.4s;
 	}
 	.penIcon {
 		margin-right: 4rem;
@@ -57,6 +69,5 @@ export const ItemStyled = styled.li`
 	.selected {
 		text-decoration-line: line-through;
 		opacity: 0.5;
-		
 	}
 `;

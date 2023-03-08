@@ -19,7 +19,6 @@ const ItemList = () => {
 			return newData.map((item) => {
 				return <Item key={item.id} item={item} />;
 			});
-			console.log(newData);
 		} else if (filter == "complete") {
 			const newData = data.filter((item) => item.selected);
 			count = newData.length;

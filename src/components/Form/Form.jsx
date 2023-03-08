@@ -23,12 +23,27 @@ const Form = () => {
 	}, []);
 
 	const [text, setText] = useState("");
+	const hour = new Date().getHours();
+	const minutes = new Date().getMinutes();
+	const day = new Date().getDate();
+	const month = new Date().getMonth();
+	const year = new Date().getFullYear();
 
 	const id = randomId();
 	const handleSubmit = (e) => {
+		const time =
+			`${hour >= 10 ? hour : `0${hour}`}` +
+			":" +
+			`${minutes >= 10 ? minutes : `0${minutes}`}` +
+			"      " +
+			`${day >= 10 ? day : `0${day}`}` +
+			"." +
+			`${month >= 10 ? month : `0${month}`}` +
+			"." +
+			`${year}`;
 		e.preventDefault();
 		if (!formValue) {
-			itemData.unshift({ id, item: text, selected: false });
+			itemData.unshift({ id, item: text, selected: false, time });
 			setLocal(itemData);
 			getLocal(JSON.parse(localStorage.getItem("data")));
 			setText("");
@@ -37,6 +52,7 @@ const Form = () => {
 			itemData.forEach((item) => {
 				if (item.id == editId) {
 					item.item = text;
+					item.time = time;
 				}
 			});
 			setLocal(itemData);

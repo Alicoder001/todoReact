@@ -3,7 +3,29 @@ import regularWoff from "../fonts/josefin-sans-v25-latin-regular.woff";
 import regularWoff2 from "../fonts/josefin-sans-v25-latin-regular.woff2";
 import boldWoff from "../fonts/josefin-sans-v25-latin-700.woff";
 import boldWoff2 from "../fonts/josefin-sans-v25-latin-700.woff2";
+
 export const GloabalStyle = styled.div`
+	transition: 0.5s;
+	/* Firefox */
+	* {
+		scrollbar-width: auto;
+		scrollbar-color: #0b5ed7 #ffffff;
+	}
+
+	/* Chrome, Edge, and Safari */
+	*::-webkit-scrollbar {
+		width: 16px;
+	}
+
+	*::-webkit-scrollbar-track {
+		background: ${(props) => (props.theme.isDark ? "#1d1b32" : "#f2f2f2")};
+	}
+
+	*::-webkit-scrollbar-thumb {
+		background-color: #0b5ed7;
+		border-radius: 10px;
+		border: 3px solid #ffffff;
+	}
 	/* josefin-sans-regular - latin */
 	@font-face {
 		font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
@@ -32,9 +54,13 @@ export const GloabalStyle = styled.div`
 	main {
 		padding-bottom: 4rem;
 		width: 100%;
+		min-height: 100vh;
+		height: 100%;
 	}
 	font-family: "Josefin Sans";
-	background-color: #f2f2f2;
+	background-color: ${(props) =>
+		props.theme.isDark ? "#03001C" : "#f2f2f2"};
+	color: ${(props) => (props.theme.isDark ? "#aaacbc" : "#494C6B")};
 	font-size: 1.8rem;
 	line-height: 1;
 `;

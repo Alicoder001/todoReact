@@ -24,7 +24,9 @@ const LocalContextProveder = ({ children }) => {
 		formValue: null,
 		editId: null,
 		filter: "all",
-		isDark: false,
+		isDark: localStorage.getItem("isDark")
+			? JSON.parse(localStorage.getItem("isDark"))
+			: true,
 	});
 
 	const getLocal = (data) => {
@@ -53,7 +55,13 @@ const LocalContextProveder = ({ children }) => {
 		dispatch({ type: "itemType", payload: itemType });
 	};
 	const changeMode = (mode) => {
-		dispatch({ type: "changeMode", payload: mode });
+		localStorage.setItem("isDark", JSON.stringify(mode));
+		dispatch({
+			type: "changeMode",
+			payload: localStorage.getItem("isDark")
+				? JSON.parse(localStorage.getItem("isDark"))
+				: true,
+		});
 	};
 	return (
 		<LocalContext.Provider
@@ -64,7 +72,7 @@ const LocalContextProveder = ({ children }) => {
 				deleteF,
 				itemText,
 				filterF,
-				changeMode
+				changeMode,
 			}}>
 			{children}
 		</LocalContext.Provider>

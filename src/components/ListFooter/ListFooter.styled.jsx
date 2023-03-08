@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const ListFooterStyled = styled.div`
-	background-color: white;
+	background-color: ${(props) => (props.theme.isDark ? "#1A1A40" : "white")};
 	width: 100%;
 	height: 5rem;
 	display: flex;

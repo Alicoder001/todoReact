@@ -9,7 +9,8 @@ export const FormStyled = styled.form`
 		height: 64px;
 		display: flex;
 		align-items: center;
-		background: white;
+		background-color: ${(props) =>
+			props.theme.isDark ? "#1A1A40" : "white"};
 		padding: 2.3rem 7.2rem;
 	}
 	.form_input {
@@ -18,6 +19,9 @@ export const FormStyled = styled.form`
 		font-size: 1.8rem;
 		line-height: 1.8rem;
 		border: none;
+		color: ${(props) => (props.theme.isDark ? "#aaacbc" : "#494C6B")};
+		background-color: ${(props) =>
+			props.theme.isDark ? "#1A1A40" : "white"};
 		&::placeholder {
 			font-family: "Josefin Sans";
 		}
