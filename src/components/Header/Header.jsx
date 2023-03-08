@@ -4,7 +4,7 @@ import { HeaderStyled } from "./HeaderStyled";
 const Header = () => {
 	return (
 		<HeaderStyled>
-			<Navbar />;
+			<Navbar />
 		</HeaderStyled>
 	);
 };
