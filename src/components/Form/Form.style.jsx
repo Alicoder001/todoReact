@@ -1,10 +1,11 @@
 import styled from "styled-components";
 
 export const FormStyled = styled.form`
+	position: relative;
 	.form_block {
 		box-shadow: 0px 35px 50px -15px rgba(194, 195, 214, 0.5);
 		margin-top: -142px;
-		margin-bottom: 1.2rem;
+		margin-bottom: 2.4rem;
 		border-radius: 5px;
 		height: 64px;
 		display: flex;
@@ -14,8 +15,11 @@ export const FormStyled = styled.form`
 		padding: 2.3rem 7.2rem;
 	}
 	.error {
-		color: red;
-		margin-bottom: 1.2rem;
+		color: ${(props) => (props.theme.isDark ? "#da7a7a" : "#942727")};
+		font-weight: 700;
+		font-size: 2rem;
+		top: -20px;
+		position: absolute;
 	}
 	.form_input {
 		font-family: "Josefin Sans";
