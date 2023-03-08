@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const ItemStyled = styled.li`
 	height: 64px;
-	background-color: ${(props) => (props.theme.isDark ? "#1A1A40" : "white")};
+	background-color: ${(props) => (props.theme.isDark ? "#25273D" : "white")};
 	width: 100%;
 	display: flex;
 	align-items: center;

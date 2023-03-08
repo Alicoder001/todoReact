@@ -10,7 +10,7 @@ export const FormStyled = styled.form`
 		display: flex;
 		align-items: center;
 		background-color: ${(props) =>
-			props.theme.isDark ? "#1A1A40" : "white"};
+			props.theme.isDark ? "#25273D" : "white"};
 		padding: 2.3rem 7.2rem;
 	}
 	.form_input {
@@ -21,7 +21,7 @@ export const FormStyled = styled.form`
 		border: none;
 		color: ${(props) => (props.theme.isDark ? "#aaacbc" : "#494C6B")};
 		background-color: ${(props) =>
-			props.theme.isDark ? "#1A1A40" : "white"};
+			props.theme.isDark ? "#25273D" : "white"};
 		&::placeholder {
 			font-family: "Josefin Sans";
 		}

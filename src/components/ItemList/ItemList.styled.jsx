@@ -24,7 +24,7 @@ export const ItemListStyled = styled.ul`
 		background-color: #e3e4f1;
 		box-shadow: ${(props) =>
 			props.theme.isDark
-				? "0px 35px 50px -15px rgba(108, 108, 185, 0.5)"
+				? "0px 35px 50px -15px rgba(0, 0, 0, 0.5)"
 				: "0px 35px 50px -15px rgba(194, 195, 214, 0.5)"};
 		border-radius: 5px;
 		display: flex;

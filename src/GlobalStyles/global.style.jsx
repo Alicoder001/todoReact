@@ -18,7 +18,7 @@ export const GloabalStyle = styled.div`
 	}
 
 	*::-webkit-scrollbar-track {
-		background: ${(props) => (props.theme.isDark ? "#1d1b32" : "#f2f2f2")};
+		background: ${(props) => (props.theme.isDark ? "#25273D" : "#f2f2f2")};
 	}
 
 	*::-webkit-scrollbar-thumb {
@@ -59,7 +59,7 @@ export const GloabalStyle = styled.div`
 	}
 	font-family: "Josefin Sans";
 	background-color: ${(props) =>
-		props.theme.isDark ? "#03001C" : "#f2f2f2"};
+		props.theme.isDark ? "#171823" : "#f2f2f2"};
 	color: ${(props) => (props.theme.isDark ? "#aaacbc" : "#494C6B")};
 	font-size: 1.8rem;
 	line-height: 1;
