@@ -29,7 +29,7 @@ const ItemList = () => {
 	};
 	return (
 		<>
-			{countBig && (
+			{countBig !== 0 && (
 				<ItemListStyled>
 					<div className="listBlock">{data && ItemType()}</div>
 					<ListFooter count={count} />
