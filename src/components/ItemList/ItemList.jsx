@@ -10,6 +10,7 @@ const ItemList = () => {
 	const ItemType = () => {
 		if (filter === "all") {
 			count = data && data.length;
+		
 			return data.map((item) => {
 				return <Item key={item.id} item={item} />;
 			});
@@ -32,7 +33,7 @@ const ItemList = () => {
 			{countBig !== 0 && (
 				<ItemListStyled>
 					<div className="listBlock">{data && ItemType()}</div>
-					<ListFooter count={count} />
+					<ListFooter count={count} data={data && data} />
 				</ItemListStyled>
 			)}
 		</>

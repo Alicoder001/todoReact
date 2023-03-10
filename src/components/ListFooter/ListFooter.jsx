@@ -3,7 +3,7 @@ import useLocalContext from "../../hooks/useLocalContext";
 import Categories from "../Categories/Categories";
 import { ListFooterStyled } from "./ListFooter.styled";
 
-const ListFooter = ({ count }) => {
+const ListFooter = ({ count, data }) => {
 	const { getLocal } = useLocalContext();
 	return (
 		<ListFooterStyled>
@@ -13,8 +13,9 @@ const ListFooter = ({ count }) => {
 			<Categories />
 			<p
 				onClick={() => {
-					localStorage.clear();
-					getLocal();
+					const newData = data.filter((item) => !item.selected);
+					localStorage.setItem("data", JSON.stringify(newData));
+					getLocal(JSON.parse(localStorage.getItem("data")));
 				}}>
 				Clear Completed
 			</p>
